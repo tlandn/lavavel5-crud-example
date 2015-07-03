@@ -8,8 +8,6 @@
 
 	@include('partials.alerts.errors')
 
-	@include('partials.alerts.success')
-
 	{!! Form::model( $task, ['method' => 'PATCH','route' => ['tasks.update', $task->id]] ) !!}
 	 
 	<div class="form-group">

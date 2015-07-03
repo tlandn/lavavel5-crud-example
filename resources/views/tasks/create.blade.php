@@ -8,8 +8,6 @@
 
     @include('partials.alerts.errors')
     
-    @include('partials.alerts.success')
-
     {!! Form::open([ 'route' => 'tasks.store'  ]) !!}
 
         <div class="form-group">
