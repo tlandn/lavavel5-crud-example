@@ -8,7 +8,7 @@
 
     @include('partials.alerts.errors')
     
-    {!! Form::open([ 'route' => 'tasks.store'  ]) !!}
+    {!! Form::open(['route' => 'tasks.store']) !!}
 
         <div class="form-group">
             {!! Form::label('title', 'Title:', ['class'=>'control-label']) !!}
