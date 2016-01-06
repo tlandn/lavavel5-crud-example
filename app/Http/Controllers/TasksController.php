@@ -24,8 +24,9 @@ class TasksController extends Controller
             'title'       => 'required',
             'description' => 'required'
         ]);
-        
+
         $input = $request->all();
+
         Task::create($input);
 
         \Session::flash('flash_message', 'Tarea agregada');
@@ -35,29 +36,30 @@ class TasksController extends Controller
 
     public function show($id) {
         $task = Task::findOrFail($id);
-        
+
         return view('tasks.show')->withTask($task);
     }
 
     public function edit($id) {
         $task = Task::findOrFail($id);
-        
+
         return view('tasks.edit')->withTask($task);
     }
 
     public function update($id, Request $request) {
         $task = Task::findOrFail($id);
-        
+
         $this->validate($request, [
             'title'       => 'required',
             'description' => 'required'
         ]);
 
         $input = $request->all();
-        $task->fill($input)->save();
-        
+        //$task->fill($input)->save();
+        $task->update($input);
+
         \Session::flash('flash_message', 'Tarea Actualizada');
-        
+
         return redirect()->back();
     }
 
